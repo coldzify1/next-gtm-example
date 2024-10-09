@@ -14,12 +14,12 @@ export default function App({ Component, pageProps }: AppProps) {
           })(window,document,'script','dataLayer','GTM-WSG9SPVK');
         `}
     </Script>
-      <Script
+      {/* <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-WS8P4K4HPP"
         strategy="afterInteractive"
         async
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
+      /> */}
+      {/* <Script id="google-analytics" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
@@ -27,7 +27,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
           gtag('config', 'G-WS8P4K4HPP');
         `}
-      </Script>
+      </Script> */}
       <Component {...pageProps} />;
     </>
   );
