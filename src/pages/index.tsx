@@ -15,8 +15,11 @@ const geistMono = localFont({
 export default function Home() {
   const onClickTrackEvent = () => {
     window.dataLayer.push({
-      "event" : "simple-click-button",
-      "myAttribute" : "Hello"
+      "event" : "payment_complete",
+      "customer_id" : "CUSTOMER_ID",
+      "customer_name" : "CUSTOMER_NAME",
+      "order_no" : "O123123334",
+      "total_sales" : "500.00",
     })
   }
   return (
@@ -32,7 +35,7 @@ export default function Home() {
             href="#"
             onClick={onClickTrackEvent}
           >
-            Track Event
+            Track Event (payment_complete)
           </a>
   
         </div>
