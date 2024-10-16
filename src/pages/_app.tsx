@@ -14,20 +14,6 @@ export default function App({ Component, pageProps }: AppProps) {
           })(window,document,'script','dataLayer','GTM-WSG9SPVK');
         `}
     </Script>
-      {/* <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-WS8P4K4HPP"
-        strategy="afterInteractive"
-        async
-      /> */}
-      {/* <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-WS8P4K4HPP');
-        `}
-      </Script> */}
       <Component {...pageProps} />;
     </>
   );

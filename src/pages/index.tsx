@@ -13,6 +13,7 @@ const geistMono = localFont({
 });
 
 export default function Home() {
+  
   const onClickTrackEvent = () => {
     window.dataLayer.push({
       "event" : "payment_complete",
