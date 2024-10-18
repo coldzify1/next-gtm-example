@@ -14,7 +14,6 @@ const geistMono = localFont({
 });
 
 export default function Home() {
-  
   const onClickTrackEvent = () => {
     // window.dataLayer.push({
     //   "event" : "payment_complete",
@@ -24,22 +23,26 @@ export default function Home() {
     //   "total_sales" : "500.00",
     // })
     sendGTMEvent({
-      "event" : "tc_payment_complete_doctor",
-      "customer_user_id" : "CUSTOMER_ID",
-      "user_id" : "CUSTOMER_ID",
-      "order_no" : "O123123334",
-      "total_sales" : "500.00",
-    })
-  }
+      event: "tc_payment_complete_doctor",
+      event_data: {
+        customer_user_id: "CUSTOMER_ID",
+        user_id: "CUSTOMER_ID",
+        order_no: "O123123334",
+        total_sales: "500.00",
+      },
+    });
+  };
   const onClickSimpleTrackEvent = () => {
     // window.dataLayer.push({
     //   "event" : "simple-click-button",
     // })
     sendGTMEvent({
-      "event" : "simple-click-button",
-      "customer_id" : "CUSTOMER_ID",
-    })
-  }
+      event: "simple-click-button",
+      event_data: {
+        customer_id: "CUSTOMER_ID",
+      },
+    });
+  };
   return (
     <div
       className={`${geistSans.variable} ${geistMono.variable} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
@@ -47,7 +50,6 @@ export default function Home() {
       <h1>GTM Example</h1>
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <div className="flex gap-4 items-center flex-col sm:flex-row">
-
           <a
             className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
             href="#"
@@ -63,7 +65,6 @@ export default function Home() {
           >
             Track Event (simple-click-button)
           </a>
-  
         </div>
       </main>
     </div>
