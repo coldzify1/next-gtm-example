@@ -25,8 +25,8 @@ export default function Home() {
     // })
     sendGTMEvent({
       "event" : "tc_payment_complete_doctor",
-      "customer_id" : "CUSTOMER_ID",
-      "customer_name" : "CUSTOMER_NAME",
+      "customer_user_id" : "CUSTOMER_ID",
+      "user_id" : "CUSTOMER_ID",
       "order_no" : "O123123334",
       "total_sales" : "500.00",
     })
