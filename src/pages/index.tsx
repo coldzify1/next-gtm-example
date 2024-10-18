@@ -24,12 +24,10 @@ export default function Home() {
     // })
     sendGTMEvent({
       event: "tc_payment_complete_doctor",
-      event_data: {
-        customer_user_id: "CUSTOMER_ID",
-        user_id: "CUSTOMER_ID",
-        order_no: "O123123334",
-        total_sales: "500.00",
-      },
+      customer_user_id: "CUSTOMER_ID",
+      user_id: "CUSTOMER_ID",
+      order_no: "O123123334",
+      total_sales: "500.00",
     });
   };
   const onClickSimpleTrackEvent = () => {
@@ -38,9 +36,7 @@ export default function Home() {
     // })
     sendGTMEvent({
       event: "simple-click-button",
-      event_data: {
-        customer_id: "CUSTOMER_ID",
-      },
+      customer_id: "CUSTOMER_ID",
     });
   };
   return (
