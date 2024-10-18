@@ -24,7 +24,7 @@ export default function Home() {
     //   "total_sales" : "500.00",
     // })
     sendGTMEvent({
-      "event" : "payment_complete",
+      "event" : "tc_payment_complete_doctor",
       "customer_id" : "CUSTOMER_ID",
       "customer_name" : "CUSTOMER_NAME",
       "order_no" : "O123123334",
@@ -53,7 +53,7 @@ export default function Home() {
             href="#"
             onClick={onClickTrackEvent}
           >
-            Track Event (payment_complete)
+            Track Event (tc_payment_complete_doctor)
           </a>
 
           <a
