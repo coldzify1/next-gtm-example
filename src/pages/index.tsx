@@ -1,5 +1,6 @@
 import Image from "next/image";
 import localFont from "next/font/local";
+import { sendGTMEvent } from "@next/third-parties/google";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -15,12 +16,28 @@ const geistMono = localFont({
 export default function Home() {
   
   const onClickTrackEvent = () => {
-    window.dataLayer.push({
+    // window.dataLayer.push({
+    //   "event" : "payment_complete",
+    //   "customer_id" : "CUSTOMER_ID",
+    //   "customer_name" : "CUSTOMER_NAME",
+    //   "order_no" : "O123123334",
+    //   "total_sales" : "500.00",
+    // })
+    sendGTMEvent({
       "event" : "payment_complete",
       "customer_id" : "CUSTOMER_ID",
       "customer_name" : "CUSTOMER_NAME",
       "order_no" : "O123123334",
       "total_sales" : "500.00",
+    })
+  }
+  const onClickSimpleTrackEvent = () => {
+    // window.dataLayer.push({
+    //   "event" : "simple-click-button",
+    // })
+    sendGTMEvent({
+      "event" : "simple-click-button",
+      "customer_id" : "CUSTOMER_ID",
     })
   }
   return (
@@ -37,6 +54,14 @@ export default function Home() {
             onClick={onClickTrackEvent}
           >
             Track Event (payment_complete)
+          </a>
+
+          <a
+            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
+            href="#"
+            onClick={onClickSimpleTrackEvent}
+          >
+            Track Event (simple-click-button)
           </a>
   
         </div>
